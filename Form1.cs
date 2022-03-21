@@ -22,19 +22,18 @@ namespace obiz_Painter
         int x0, y0;
         Graphics K;
         Pen pen;
-        Bitmap Bee;
+        Bitmap Painter;
 
         public void setup()
         {
-            Bee = new Bitmap(400, 400);
-            K = Graphics.FromImage(Bee);
+            Painter = new Bitmap(775, 450);
+            K = Graphics.FromImage(Painter);
             pen = new Pen(Color.Black, 1);
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            x0 = e.X;
-            y0 = e.Y;
+            getPoint(e.X,e.Y);
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -42,12 +41,16 @@ namespace obiz_Painter
             if(e.Button == MouseButtons.Left)
             {
                 K.DrawLine(pen, x0, y0, e.X, e.Y);
-                x0 = e.X;
-                y0 = e.Y;
-                pictureBox1.Image = Bee;
+                getPoint(e.X, e.Y);
+                pictureBox1.Image = Painter;
             }
         }
 
+        public void getPoint(int x , int y)
+        {
+            x0 = x;
+            y0 = y;
+        }
     }
 
 
