@@ -38,22 +38,21 @@ namespace obiz_Painter
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if(figure == "line")
+            Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
+            if (figure == "line")
             {
                 getPoint(e.X, e.Y);                                //抓取當前座標
             }
             else if(figure == "Ellipse")
             {
-                Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
                 Layer.DrawEllipse(Pen, rect);                                  
             }
             else
             {
-                Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
                 Layer.DrawRectangle(Pen, rect);
             }
 
-            pictureBox1.Image = Painter;
+            OutPut();
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -64,9 +63,14 @@ namespace obiz_Painter
                 {
                     Layer.DrawLine(Pen, X0, Y0, e.X, e.Y);            //
                     getPoint(e.X, e.Y);                           //抓取當前座標
-                    pictureBox1.Image = Painter;
+                    OutPut();
                 }
             }
+        }
+
+        private void OutPut()
+        {
+            pictureBox1.Image = Painter;
         }
 
 
@@ -80,30 +84,33 @@ namespace obiz_Painter
             }
         }
 
+
+        //筆刷粗度變更
         private void Tb_Wide_TextChanged(object sender, EventArgs e)
         {
             Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
         }
 
-
-
-
-
+        //使用線條
         private void Btn_Line_Click(object sender, EventArgs e)
         {
             figure = "line";
         }
 
+        //使用圓形
         private void Btn_Ellipse_Click(object sender, EventArgs e)
         {
             figure = "Ellipse";
         }
 
+        //使用方形
         private void Btn_Rectangle_Click(object sender, EventArgs e)
         {
             figure = "Rectangle";
         }
 
+
+        //抓取座標
         public void getPoint(int x , int y)
         {
             X0 = x;
