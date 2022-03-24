@@ -32,6 +32,9 @@
             this.Btn_Green = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.Tb_Wide = new System.Windows.Forms.TextBox();
+            this.Btn_Line = new System.Windows.Forms.Button();
+            this.Btn_Ellipse = new System.Windows.Forms.Button();
+            this.Btn_Rectangle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,17 +67,50 @@
             this.Tb_Wide.TabIndex = 2;
             this.Tb_Wide.TextChanged += new System.EventHandler(this.Tb_Wide_TextChanged);
             // 
+            // Btn_Line
+            // 
+            this.Btn_Line.Location = new System.Drawing.Point(349, 22);
+            this.Btn_Line.Name = "Btn_Line";
+            this.Btn_Line.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Line.TabIndex = 3;
+            this.Btn_Line.Text = "線條";
+            this.Btn_Line.UseVisualStyleBackColor = true;
+            this.Btn_Line.Click += new System.EventHandler(this.Btn_Line_Click);
+            // 
+            // Btn_Ellipse
+            // 
+            this.Btn_Ellipse.Location = new System.Drawing.Point(430, 22);
+            this.Btn_Ellipse.Name = "Btn_Ellipse";
+            this.Btn_Ellipse.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Ellipse.TabIndex = 4;
+            this.Btn_Ellipse.Text = "圓形";
+            this.Btn_Ellipse.UseVisualStyleBackColor = true;
+            this.Btn_Ellipse.Click += new System.EventHandler(this.Btn_Ellipse_Click);
+            // 
+            // Btn_Rectangle
+            // 
+            this.Btn_Rectangle.Location = new System.Drawing.Point(511, 22);
+            this.Btn_Rectangle.Name = "Btn_Rectangle";
+            this.Btn_Rectangle.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Rectangle.TabIndex = 5;
+            this.Btn_Rectangle.Text = "方形";
+            this.Btn_Rectangle.UseVisualStyleBackColor = true;
+            this.Btn_Rectangle.Click += new System.EventHandler(this.Btn_Rectangle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 464);
+            this.Controls.Add(this.Btn_Rectangle);
+            this.Controls.Add(this.Btn_Ellipse);
+            this.Controls.Add(this.Btn_Line);
             this.Controls.Add(this.Tb_Wide);
             this.Controls.Add(this.Btn_Green);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "a";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,6 +123,9 @@
         private System.Windows.Forms.Button Btn_Green;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TextBox Tb_Wide;
+        private System.Windows.Forms.Button Btn_Line;
+        private System.Windows.Forms.Button Btn_Ellipse;
+        private System.Windows.Forms.Button Btn_Rectangle;
     }
 }
 
