@@ -14,9 +14,9 @@ namespace obiz_Painter
     public partial class Form1 : Form
     {
 
-        int x0, y0;
+        int X0, Y0;
         Graphics Layer;
-        Pen pen;
+        Pen Pen;
         Bitmap Painter;
 
         public Form1()
@@ -25,14 +25,13 @@ namespace obiz_Painter
             setup();
         }
 
-
-
         public void setup()
         {
             Painter = new Bitmap(775, 450);
             //創建一個可編輯的圖層
             Layer = Graphics.FromImage(Painter);
-            pen = new Pen(Color.Black, 1);
+            Pen = new Pen(Color.Black, 1);
+            Tb_Wide.Text = "1";
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
@@ -44,16 +43,32 @@ namespace obiz_Painter
         {
             if(e.Button == MouseButtons.Left)
             {
-                K.DrawLine(pen, x0, y0, e.X, e.Y);            //
+                Layer.DrawLine(Pen, X0, Y0, e.X, e.Y);            //
                 getPoint(e.X, e.Y);                           //抓取當前座標
                 pictureBox1.Image = Painter;
             }
         }
 
+
+        //變更顏色
+        private void Btn_Green_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
+                Btn_Green.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void Tb_Wide_TextChanged(object sender, EventArgs e)
+        {
+            Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
+        }
+
         public void getPoint(int x , int y)
         {
-            x0 = x;
-            y0 = y;
+            X0 = x;
+            Y0 = y;
         }
     }
 

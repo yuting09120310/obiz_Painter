@@ -29,35 +29,64 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Btn_Green = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.Tb_Wide = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 66);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(775, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(581, 387);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
+            // Btn_Green
+            // 
+            this.Btn_Green.BackColor = System.Drawing.Color.Black;
+            this.Btn_Green.Location = new System.Drawing.Point(4, 22);
+            this.Btn_Green.Name = "Btn_Green";
+            this.Btn_Green.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Green.TabIndex = 1;
+            this.Btn_Green.UseVisualStyleBackColor = false;
+            this.Btn_Green.Click += new System.EventHandler(this.Btn_Green_Click);
+            // 
+            // Tb_Wide
+            // 
+            this.Tb_Wide.Location = new System.Drawing.Point(85, 22);
+            this.Tb_Wide.Name = "Tb_Wide";
+            this.Tb_Wide.Size = new System.Drawing.Size(120, 22);
+            this.Tb_Wide.TabIndex = 2;
+            this.Tb_Wide.TextChanged += new System.EventHandler(this.Tb_Wide_TextChanged);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 481);
+            this.ClientSize = new System.Drawing.Size(596, 464);
+            this.Controls.Add(this.Tb_Wide);
+            this.Controls.Add(this.Btn_Green);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button Btn_Green;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TextBox Tb_Wide;
     }
 }
 
