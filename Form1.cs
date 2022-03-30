@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using obiz_load_data;
 
 namespace obiz_Painter
 {
@@ -20,6 +21,9 @@ namespace obiz_Painter
         Bitmap Painter;
         string figure;
 
+        string AppName = "";
+        Msg_log msg_Log = new Msg_log();
+
         public Form1()
         {
             InitializeComponent();
@@ -28,43 +32,62 @@ namespace obiz_Painter
 
         public void setup()
         {
-            figure = "line";
-            Painter = new Bitmap(775, 450);
-            //創建一個可編輯的圖層
-            Layer = Graphics.FromImage(Painter);
-            Pen = new Pen(Color.Black, 1);
-            Tb_Wide.Text = "1";
+            try
+            {
+                figure = "line";
+                Painter = new Bitmap(775, 450);
+                //創建一個可編輯的圖層
+                Layer = Graphics.FromImage(Painter);
+                Pen = new Pen(Color.Black, 1);
+                Tb_Wide.Text = "1";
+            }catch(Exception ex)
+            {
+                msg_Log.save_log(AppName, ex);
+            }
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
-            if (figure == "line")
+            try
             {
-                getPoint(e.X, e.Y);                                //抓取當前座標
-            }
-            else if(figure == "Ellipse")
-            {
-                Layer.DrawEllipse(Pen, rect);                                  
-            }
-            else
-            {
-                Layer.DrawRectangle(Pen, rect);
-            }
+                Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
+                if (figure == "line")
+                {
+                    getPoint(e.X, e.Y);                                //抓取當前座標
+                }
+                else if (figure == "Ellipse")
+                {
+                    Layer.DrawEllipse(Pen, rect);
+                }
+                else
+                {
+                    Layer.DrawRectangle(Pen, rect);
+                }
 
-            OutPut();
+                OutPut();
+            }
+            catch(Exception ex)
+            {
+                msg_Log.save_log(AppName, ex);
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            try
             {
-                if(figure == "line")
+                if (e.Button == MouseButtons.Left)
                 {
-                    Layer.DrawLine(Pen, X0, Y0, e.X, e.Y);            //
-                    getPoint(e.X, e.Y);                           //抓取當前座標
-                    OutPut();
+                    if (figure == "line")
+                    {
+                        Layer.DrawLine(Pen, X0, Y0, e.X, e.Y);            //
+                        getPoint(e.X, e.Y);                           //抓取當前座標
+                        OutPut();
+                    }
                 }
+            }catch(Exception ex)
+            {
+                msg_Log.save_log(AppName, ex);
             }
         }
 
@@ -77,10 +100,16 @@ namespace obiz_Painter
         //變更顏色
         private void Btn_Green_Click(object sender, EventArgs e)
         {
-            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
-                Btn_Green.BackColor = colorDialog1.Color;
+                if (colorDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
+                    Btn_Green.BackColor = colorDialog1.Color;
+                }
+            }catch(Exception ex)
+            {
+                msg_Log.save_log(AppName, ex);
             }
         }
 
