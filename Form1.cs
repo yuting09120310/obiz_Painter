@@ -114,11 +114,7 @@ namespace obiz_Painter
         }
 
 
-        //筆刷粗度變更
-        private void Tb_Wide_TextChanged(object sender, EventArgs e)
-        {
-            Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
-        }
+        
 
         //使用線條
         private void Btn_Line_Click(object sender, EventArgs e)
@@ -136,6 +132,18 @@ namespace obiz_Painter
         private void Btn_Rectangle_Click(object sender, EventArgs e)
         {
             figure = "Rectangle";
+        }
+
+        //筆刷粗度變更
+        private void Tb_Wide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (Tb_Wide.Text.Length != 0)
+                {
+                    Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
+                }
+            }
         }
 
 

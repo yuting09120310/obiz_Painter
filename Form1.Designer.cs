@@ -65,7 +65,7 @@
             this.Tb_Wide.Name = "Tb_Wide";
             this.Tb_Wide.Size = new System.Drawing.Size(120, 22);
             this.Tb_Wide.TabIndex = 2;
-            this.Tb_Wide.TextChanged += new System.EventHandler(this.Tb_Wide_TextChanged);
+            this.Tb_Wide.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_Wide_KeyDown);
             // 
             // Btn_Line
             // 
