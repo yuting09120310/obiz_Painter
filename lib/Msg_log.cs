@@ -46,10 +46,4 @@ namespace Alex_Component
         }
 
     }
-
-    internal class Msg_log
-    {
-        
-    }
-
 }
