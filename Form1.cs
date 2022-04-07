@@ -19,8 +19,7 @@ namespace obiz_Painter
         Graphics Layer;
         Pen Pen;
         Bitmap Painter;
-        string figure;
-
+        string Figure;
         string AppName = "";
         Msg_log msg_Log = new Msg_log();
 
@@ -34,28 +33,28 @@ namespace obiz_Painter
         {
             try
             {
-                figure = "line";
+                Figure = "line";
                 Painter = new Bitmap(775, 450);
                 //創建一個可編輯的圖層
                 Layer = Graphics.FromImage(Painter);
                 Pen = new Pen(Color.Black, 1);
-                Tb_Wide.Text = "1";
+                txtWide.Text = "1";
             }catch(Exception ex)
             {
                 msg_Log.save_log(AppName, ex);
             }
         }
 
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        private void picImg_MouseDown(object sender, MouseEventArgs e)
         {
             try
             {
                 Rectangle rect = new Rectangle(e.X, e.Y, 40, 40);
-                if (figure == "line")
+                if (Figure == "line")
                 {
                     getPoint(e.X, e.Y);                                //抓取當前座標
                 }
-                else if (figure == "Ellipse")
+                else if (Figure == "Ellipse")
                 {
                     Layer.DrawEllipse(Pen, rect);
                 }
@@ -64,7 +63,7 @@ namespace obiz_Painter
                     Layer.DrawRectangle(Pen, rect);
                 }
 
-                OutPut();
+                output();
             }
             catch(Exception ex)
             {
@@ -72,17 +71,17 @@ namespace obiz_Painter
             }
         }
 
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        private void picImg_MouseMove(object sender, MouseEventArgs e)
         {
             try
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    if (figure == "line")
+                    if (Figure == "line")
                     {
                         Layer.DrawLine(Pen, X0, Y0, e.X, e.Y);            //
                         getPoint(e.X, e.Y);                           //抓取當前座標
-                        OutPut();
+                        output();
                     }
                 }
             }catch(Exception ex)
@@ -91,21 +90,21 @@ namespace obiz_Painter
             }
         }
 
-        private void OutPut()
+        private void output()
         {
-            pictureBox1.Image = Painter;
+            picImg.Image = Painter;
         }
 
 
         //變更顏色
-        private void Btn_Green_Click(object sender, EventArgs e)
+        private void btnColor_Click(object sender, EventArgs e)
         {
             try
             {
                 if (colorDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
-                    Btn_Green.BackColor = colorDialog1.Color;
+                    Pen = new Pen(colorDialog1.Color, float.Parse(txtWide.Text));
+                    btnColor.BackColor = colorDialog1.Color;
                 }
             }catch(Exception ex)
             {
@@ -117,31 +116,31 @@ namespace obiz_Painter
         
 
         //使用線條
-        private void Btn_Line_Click(object sender, EventArgs e)
+        private void btnLine_Click(object sender, EventArgs e)
         {
-            figure = "line";
+            Figure = "line";
         }
 
         //使用圓形
-        private void Btn_Ellipse_Click(object sender, EventArgs e)
+        private void btnEllipse_Click(object sender, EventArgs e)
         {
-            figure = "Ellipse";
+            Figure = "Ellipse";
         }
 
         //使用方形
-        private void Btn_Rectangle_Click(object sender, EventArgs e)
+        private void btnRectangle_Click(object sender, EventArgs e)
         {
-            figure = "Rectangle";
+            Figure = "Rectangle";
         }
 
         //筆刷粗度變更
-        private void Tb_Wide_KeyDown(object sender, KeyEventArgs e)
+        private void txtWide_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if (Tb_Wide.Text.Length != 0)
+                if (txtWide.Text.Length != 0)
                 {
-                    Pen = new Pen(colorDialog1.Color, float.Parse(Tb_Wide.Text));
+                    Pen = new Pen(colorDialog1.Color, float.Parse(txtWide.Text));
                 }
             }
         }

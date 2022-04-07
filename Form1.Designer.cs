@@ -28,90 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Btn_Green = new System.Windows.Forms.Button();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.btnColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.Tb_Wide = new System.Windows.Forms.TextBox();
-            this.Btn_Line = new System.Windows.Forms.Button();
-            this.Btn_Ellipse = new System.Windows.Forms.Button();
-            this.Btn_Rectangle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtWide = new System.Windows.Forms.TextBox();
+            this.btnLine = new System.Windows.Forms.Button();
+            this.btnEllipse = new System.Windows.Forms.Button();
+            this.btnRectangle = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picImg
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(4, 66);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(581, 387);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.picImg.Location = new System.Drawing.Point(4, 66);
+            this.picImg.Margin = new System.Windows.Forms.Padding(2);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(581, 387);
+            this.picImg.TabIndex = 0;
+            this.picImg.TabStop = false;
+            this.picImg.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picImg_MouseDown);
+            this.picImg.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picImg_MouseMove);
             // 
-            // Btn_Green
+            // btnColor
             // 
-            this.Btn_Green.BackColor = System.Drawing.Color.Black;
-            this.Btn_Green.Location = new System.Drawing.Point(4, 22);
-            this.Btn_Green.Name = "Btn_Green";
-            this.Btn_Green.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Green.TabIndex = 1;
-            this.Btn_Green.UseVisualStyleBackColor = false;
-            this.Btn_Green.Click += new System.EventHandler(this.Btn_Green_Click);
+            this.btnColor.BackColor = System.Drawing.Color.Black;
+            this.btnColor.Location = new System.Drawing.Point(4, 22);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(75, 23);
+            this.btnColor.TabIndex = 1;
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
-            // Tb_Wide
+            // txtWide
             // 
-            this.Tb_Wide.Location = new System.Drawing.Point(85, 22);
-            this.Tb_Wide.Name = "Tb_Wide";
-            this.Tb_Wide.Size = new System.Drawing.Size(120, 22);
-            this.Tb_Wide.TabIndex = 2;
-            this.Tb_Wide.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_Wide_KeyDown);
+            this.txtWide.Location = new System.Drawing.Point(85, 22);
+            this.txtWide.Name = "txtWide";
+            this.txtWide.Size = new System.Drawing.Size(120, 22);
+            this.txtWide.TabIndex = 2;
+            this.txtWide.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtWide_KeyDown);
             // 
-            // Btn_Line
+            // btnLine
             // 
-            this.Btn_Line.Location = new System.Drawing.Point(349, 22);
-            this.Btn_Line.Name = "Btn_Line";
-            this.Btn_Line.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Line.TabIndex = 3;
-            this.Btn_Line.Text = "線條";
-            this.Btn_Line.UseVisualStyleBackColor = true;
-            this.Btn_Line.Click += new System.EventHandler(this.Btn_Line_Click);
+            this.btnLine.Location = new System.Drawing.Point(349, 22);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Size = new System.Drawing.Size(75, 23);
+            this.btnLine.TabIndex = 3;
+            this.btnLine.Text = "線條";
+            this.btnLine.UseVisualStyleBackColor = true;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
             // 
-            // Btn_Ellipse
+            // btnEllipse
             // 
-            this.Btn_Ellipse.Location = new System.Drawing.Point(430, 22);
-            this.Btn_Ellipse.Name = "Btn_Ellipse";
-            this.Btn_Ellipse.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Ellipse.TabIndex = 4;
-            this.Btn_Ellipse.Text = "圓形";
-            this.Btn_Ellipse.UseVisualStyleBackColor = true;
-            this.Btn_Ellipse.Click += new System.EventHandler(this.Btn_Ellipse_Click);
+            this.btnEllipse.Location = new System.Drawing.Point(430, 22);
+            this.btnEllipse.Name = "btnEllipse";
+            this.btnEllipse.Size = new System.Drawing.Size(75, 23);
+            this.btnEllipse.TabIndex = 4;
+            this.btnEllipse.Text = "圓形";
+            this.btnEllipse.UseVisualStyleBackColor = true;
+            this.btnEllipse.Click += new System.EventHandler(this.btnEllipse_Click);
             // 
-            // Btn_Rectangle
+            // btnRectangle
             // 
-            this.Btn_Rectangle.Location = new System.Drawing.Point(511, 22);
-            this.Btn_Rectangle.Name = "Btn_Rectangle";
-            this.Btn_Rectangle.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Rectangle.TabIndex = 5;
-            this.Btn_Rectangle.Text = "方形";
-            this.Btn_Rectangle.UseVisualStyleBackColor = true;
-            this.Btn_Rectangle.Click += new System.EventHandler(this.Btn_Rectangle_Click);
+            this.btnRectangle.Location = new System.Drawing.Point(511, 22);
+            this.btnRectangle.Name = "btnRectangle";
+            this.btnRectangle.Size = new System.Drawing.Size(75, 23);
+            this.btnRectangle.TabIndex = 5;
+            this.btnRectangle.Text = "方形";
+            this.btnRectangle.UseVisualStyleBackColor = true;
+            this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 464);
-            this.Controls.Add(this.Btn_Rectangle);
-            this.Controls.Add(this.Btn_Ellipse);
-            this.Controls.Add(this.Btn_Line);
-            this.Controls.Add(this.Tb_Wide);
-            this.Controls.Add(this.Btn_Green);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnRectangle);
+            this.Controls.Add(this.btnEllipse);
+            this.Controls.Add(this.btnLine);
+            this.Controls.Add(this.txtWide);
+            this.Controls.Add(this.btnColor);
+            this.Controls.Add(this.picImg);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "a";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,13 +119,13 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Btn_Green;
+        private System.Windows.Forms.PictureBox picImg;
+        private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TextBox Tb_Wide;
-        private System.Windows.Forms.Button Btn_Line;
-        private System.Windows.Forms.Button Btn_Ellipse;
-        private System.Windows.Forms.Button Btn_Rectangle;
+        private System.Windows.Forms.TextBox txtWide;
+        private System.Windows.Forms.Button btnLine;
+        private System.Windows.Forms.Button btnEllipse;
+        private System.Windows.Forms.Button btnRectangle;
     }
 }
 
